@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5 Website Interactions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: background-color 0.3s;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+        }
+        .box {
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Website with 5 Interactions</h1>
+
+    
+    <h2>1. Counter</h2>
+    <p>Count: <span id="count">0</span></p>
+    <button onclick="increaseCount()">Increase</button>
+
+    <hr>
+
+    
+    <h2>2. Live Text Display</h2>
+    <input type="text" id="userInput" placeholder="Type here..." onkeyup="showText()">
+    <p>You typed: <span id="displayText"></span></p>
+
+    <hr>
+
+    
+    <h2>3. Show/Hide Content</h2>
+    <button onclick="toggleContent()">Toggle Content</button>
+    <div id="content" class="box">
+        This content can be shown or hidden.
+    </div>
+
+    <hr>
+
+    
+    <h2>4. Change Background Color</h2>
+    <button onclick="changeColor('lightblue')">Blue</button>
+    <button onclick="changeColor('lightgreen')">Green</button>
+    <button onclick="changeColor('lightyellow')">Yellow</button>
+
+    <hr>
+
+   
+    <h2>5. Greeting Form</h2>
+    <input type="text" id="name" placeholder="Enter your name">
+    <button onclick="greetUser()">Submit</button>
+    <p id="greeting"></p>
+
+    <script>
+        
+        let count = 0;
+        function increaseCount() {
+            count++;
+            document.getElementById("count").innerText = count;
+        }
+
+        
+        function showText() {
+            document.getElementById("displayText").innerText =
+                document.getElementById("userInput").value;
+        }
+
+       
+        function toggleContent() {
+            const content = document.getElementById("content");
+            content.style.display =
+                content.style.display === "none" ? "block" : "none";
+        }
+
+       
+        function changeColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+       
+        function greetUser() {
+            const name = document.getElementById("name").value;
+            document.getElementById("greeting").innerText =
+                "Hello, " + name + "!";
+        }
+    </script>
+
+</body>
+</html>
